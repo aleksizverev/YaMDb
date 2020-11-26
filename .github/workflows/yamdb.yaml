@@ -47,17 +47,7 @@ jobs:
   deploy:
      runs-on: ubuntu-latest
      needs: build_and_push_to_docker_hub
-     steps:
-       - name: Copy file via ssh password
-         uses: appleboy/scp-action@master
-         with:
-           host: ${{ secrets.HOST }}
-           username: ${{ secrets.USER }}
-           key: ${{ secrets.SSH_KEY }}
-           port: 22
-           source: "./.env, nginx/ngnix.conf, ./docker-compose.yaml"
-           target: "/home/aleksizverev/yamdb_final"
- 
+     steps: 
        - name: executing remote ssh commands to deploy
          uses: appleboy/ssh-action@master
          with:
@@ -66,10 +56,9 @@ jobs:
              key: ${{ secrets.SSH_KEY }}
              passphrase: ${{ secrets.PASSPHRASE }}
              script: |
-               cd yamdb_final
-               sudo docker rmi aleksizverev/yamdb -f
-               sudo docker pull aleksizverev/yamdb:latest
-               sudo docker-compose up --force-recreate -d web
+                cd yamdb_final
+                sudo docker-compose pull web
+                sudo docker-compose up --force-recreate -d web
  
   send_message:
      runs-on: ubuntu-latest
