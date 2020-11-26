@@ -44,5 +44,3 @@ admin.site.register(Title, TitleAdmin)
 admin.site.register(User, UserAdmin)
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Category, CategoryAdmin)
-
-
