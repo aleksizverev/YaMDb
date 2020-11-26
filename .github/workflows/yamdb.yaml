@@ -54,8 +54,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
-          port: 22
-          source: ".env, nginx/ngnix.conf, docker-compose.yaml"
+          rm: true
+          source: ".env, nginx/*, docker-compose.yaml"
           target: "/home/aleksizverev/yamdb_final"
 
        - name: executing remote ssh commands to deploy
