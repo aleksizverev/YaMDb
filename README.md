@@ -1,5 +1,5 @@
 # YaMDb 
-!(https://github.com/aleksizverev/yamdb_final/workflows/yamdb/badge.svg)  
+![YaMDb workflow](https://github.com/aleksizverev/yamdb_final/workflows/yamdb/badge.svg)  
 REST API for YaMDb service.
 A database with reviews on films, books and music.
 
