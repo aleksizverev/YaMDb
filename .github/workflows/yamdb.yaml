@@ -48,6 +48,16 @@ jobs:
      runs-on: ubuntu-latest
      needs: build_and_push_to_docker_hub
      steps:
+       - name: Copy file via ssh password
+         uses: appleboy/scp-action@master
+         with:
+           host: ${{ secrets.HOST }}
+           username: ${{ secrets.USER }}
+           key: ${{ secrets.SSH_KEY }}
+           port: 22
+           source: "./.env, nginx/ngnix.conf, ./docker-compose.yaml"
+           target: "/home/aleksizverev/yamdb_final"
+ 
        - name: executing remote ssh commands to deploy
          uses: appleboy/ssh-action@master
          with:
