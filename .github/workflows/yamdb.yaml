@@ -56,8 +56,7 @@ jobs:
              key: ${{ secrets.SSH_KEY }}
              passphrase: ${{ secrets.PASSPHRASE }}
              script: |
-               cd ~
-               cd ./code
+               cd yamdb_final
                sudo docker rmi aleksizverev/yamdb -f
                sudo docker-compose pull aleksizverev/yamdb:latest
                sudo docker-compose up --force-recreate -d web
