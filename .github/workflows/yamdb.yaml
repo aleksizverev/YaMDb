@@ -1,6 +1,6 @@
 name: Flask-app workflow
  
-on: [push]
+on: [push] 
 
 jobs:
   tests:
