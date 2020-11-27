@@ -1,5 +1,5 @@
 # YaMDb
-[![Yamdb workflow](https://github.com/aleksizverev/yamdb_final/workflows/Flask-app%20workflow/badge.svg?branch=master)](https://github.com/aleksizverev/yamdb_final/workflows/yamdb/badge.svg)  
+[![Yamdb workflow](https://github.com/aleksizverev/yamdb_final/workflows/YaMDb%20workflow/badge.svg?branch=master)](https://github.com/aleksizverev/yamdb_final/workflows/yamdb/badge.svg)  
 REST API for YaMDb service.
 A database with reviews on films, books and music.
 
