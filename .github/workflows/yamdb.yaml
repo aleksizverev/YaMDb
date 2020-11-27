@@ -56,8 +56,9 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-           cd ~
            cd yamdb_final
+           sudo docker-compose pull web
+           sudo docker-compose up --force-recreate -d web
        
  
   send_message:
