@@ -55,21 +55,9 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
-          rm: true
-          source: ".env, nginx/*, docker-compose.yaml"
-          target: "/home/aleksizverev/yamdb_final"
-
-       - name: executing remote ssh commands to deploy
-         uses: appleboy/ssh-action@master
-         with:
-             host: ${{ secrets.HOST }}
-             username: ${{ secrets.USER }}
-             key: ${{ secrets.SSH_KEY }}
-             passphrase: ${{ secrets.PASSPHRASE }}
-             script: |
-                cd yamdb_final
-                sudo docker-compose pull web
-                sudo docker-compose up --force-recreate -d web
+          script: |
+           cd yamdb_final
+       
  
   send_message:
      runs-on: ubuntu-latest
